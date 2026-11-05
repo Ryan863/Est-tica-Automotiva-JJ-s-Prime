@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-zinc-950: #09090b;
+  --color-zinc-900: #121215;
+  --color-zinc-850: #18181c;
+  --color-zinc-800: #27272a;
+  --color-zinc-700: #3f3f46;
+  --color-zinc-400: #a1a1aa;
+  --color-zinc-200: #e4e4e7;
+  --color-zinc-100: #f4f4f5;
+
+  --color-accent: #dc2626;
+  --color-accent-bright: #ef4444;
+  --color-accent-deep: #991b1b;
+
+  --font-display: var(--font-syne), "Plus Jakarta Sans", sans-serif;
+  --font-body: var(--font-jakarta), system-ui, sans-serif;
+}
+
+:root {
+  --bg-primary: #09090b;
+  --bg-surface: #121215;
+  --text-primary: #e4e4e7;
+  --text-muted: #a1a1aa;
+  --accent-red: #dc2626;
+  --accent-red-hover: #ef4444;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Camada SVG Noise Cinematográfica (opacidade 0.03) */
+.bg-cinematic-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Superfície de Estúdio Automotivo */
+.surface-studio {
+  background-color: rgba(18, 18, 21, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+}
+
+.surface-studio-hover {
+  transition: border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.surface-studio-hover:hover {
+  border-color: rgba(220, 38, 38, 0.45);
+  box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.85),
+    0 0 32px -8px rgba(220, 38, 38, 0.22);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #09090b;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #dc2626;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
